@@ -5,7 +5,7 @@ using namespace std;
 //print the shortest path from source to a vertex
 void printPath(int *parent, int vertex)
 {
-	if (parent[vertex] == -1) //base case: print the source
+	if (parent[vertex] == -1) //base case: print the source which will have no parent (-1)
 	{
 		cout << vertex << " ";
 
