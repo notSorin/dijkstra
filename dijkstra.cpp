@@ -12,7 +12,7 @@ void printPath(int *parent, int vertex)
 		return;
 	}
 
-	printPath(parent, parent[vertex]); //print the path of the parent of the vertex
+	printPath(parent, parent[vertex]); //recursive case: print the path of the parent of the vertex
 
 	cout << vertex << " ";
 }
