@@ -2,21 +2,19 @@
 #include<iostream>
 using namespace std;
 
-//print the shortest path from source to a node
-void printPath(int *parent, int node)
+//print the shortest path from source to a vertex
+void printPath(int *parent, int vertex)
 {
-	//print the source
-	if (parent[node] == -1)
+	if (parent[vertex] == -1) //base case: print the source
 	{
-		cout << node << " ";
+		cout << vertex << " ";
 
 		return;
 	}
 
-	//print the path of the parent of the node
-	printPath(parent, parent[node]);
+	printPath(parent, parent[vertex]); //print the path of the parent of the vertex
 
-	cout << node << " ";
+	cout << vertex << " ";
 }
 
 //print the solution
@@ -24,8 +22,7 @@ void printSolution(int *dist, int nVertices, int source, int target, int *parent
 {
 	cout << "\n";
 
-	//print all the distances or only the one that the user is interested in
-	if (target == -1)
+	if (target == -1) //print all the distances and paths
 	{
 		for (int i = 0; i < nVertices; i++)
 		{
@@ -41,7 +38,7 @@ void printSolution(int *dist, int nVertices, int source, int target, int *parent
 			}
 		}
 	}
-	else
+	else //print the distance and path that the user is interested in
 	{
 		cout << source << " -> " << target << " minumum distance: " << dist[target] << " path: ";
 
